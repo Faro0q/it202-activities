@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+            
+            body {
+                margin: 1 rem;
+            }
+        </style>
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+    
+    <body>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> 
+
+        <p class="lead"> Farooq Syed </p>
+    
+        <form action="orderOptions">
+          <input type="text" class="form-control" id="name" placeholder="Enter your name"><br>  
+            
+            <label class="radio-inline">
+            <input type="radio" name="whereEating" id="inlineRadio1" value="Eat in">Eat in
+                </label><br>
+            
+            <label class="radio-inline">
+            <input type="radio" name="whereEating" id="inlineRadio2" value="Carry out">Carry out
+                </label><br>
+            
+            <label class="radio-inline">        
+            <input type="radio" name="whereEating" id="inlineRadio3" value="Delivery">Delivery
+               </label><br>
+            
+            <select class="form-control">
+                <option id="foodType" value="Pizza">Pizza</option>
+                <option id="foodType" value="Burger">Burger</option>
+                <option id="foodType" value="Hot Dog">Hot Dog</option>
+
+            </select>
+        </form>
+    
+    </body>
+</html>
