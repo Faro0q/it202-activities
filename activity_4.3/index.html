@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>IT 202 - Activity 4.3</title>
+    </head>
+
+    <body>
+        <script>
+            let apiEndpoint = "https://data.cityofchicago.org/resource/xzkq-xp2w.json?$LIMIT=5";
+            
+            fetch(apiEndpoint)
+                .then(response => response.json())
+                .then(json => {
+                    json.forEach(record => {
+                        for(let v of data){ 
+                            console.log(json)
+                        
+                        }
+                    }
+                                )})
+                .catch(err => alert(err))
+                
+        </script>
+    </body>
+</html>
