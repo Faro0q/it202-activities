@@ -10,7 +10,7 @@
         <script>
             let api = 'https://api.nasa.gov/planetary/apod?api_key=m0HVwsns4taxhLbiLE8LVPId4MZX2CXLjdu10beX';
 
-            fetch(api)
+            fetch(api) 
                 .then(response => response.json())
                 .then(data => {
                     let header = document.createElement('h1');
