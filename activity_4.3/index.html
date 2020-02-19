@@ -11,16 +11,23 @@
             let apiEndpoint = "https://data.cityofchicago.org/resource/xzkq-xp2w.json?$LIMIT=5";
             
             fetch(apiEndpoint)
-                .then(response => response.json())
+               .then(response => response.json())
                 .then(json => {
                     json.forEach(record => {
-                        for(let v of data){ 
-                            console.log(json)
-                        
-                        }
-                    }
-                                )})
-                .catch(err => alert(err))
+                        // Log record object for reference
+                        console.log(record);
+
+                        // Generate card for record
+                        let template = document.querySelector('div.template');
+                        let clone = template.cloneNode(true);
+                        clone.classList.remove('template');
+                        clone.querySelector('.card-title').textContent = record.name;
+                        clone.querySelector('.card-subtitle').textContent = record.department;
+                        clone.querySelector('.card-text').textContent = record.annual_salary;
+                        document.body.appendChild(clone);
+                    });
+                })
+                .catch(error => console.log(error));
                 
         </script>
     </body>
