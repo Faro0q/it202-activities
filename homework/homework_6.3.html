@@ -3,7 +3,7 @@
 <html>
     <head><title>homework 6.3</title></head>
     <body>
-        <canvas id="myCanvas"  width="500" height="500" style="background-color: coral;">
+        <canvas id="myCanvas" width="1200" height="600" style="border:1px solid #000000;">
              This will be displayed if your browser doesn't
              support the canvas element. The closing tag is
              necessary.
@@ -12,18 +12,53 @@
             
             var c = document.getElementById("myCanvas");
             var ctx = c.getContext("2d");
-            ctx.beginPath();
-            ctx.moveTo(0,100);
-            ctx.moveTo(100,0);
-            ctx.lineTo(100,150);
-            ctx.moveTo(, 10);// start at (10,10)
-            ctx.lineTo(110, 10);    
-            ctx.moveTo(100,0);
-            ctx.moveTo(0,100);
-            ctx.lineTo(50, 150);
+            ctx.fillStyle = 'blue';
+            ctx.fillRect(0, 0, 1200, 600);
+            function myLetter() // Displaying the letter 'F'
+	    	{
+                ctx.beginPath();
+			    ctx.lineWidth = 10;	
+		    	ctx.strokeStyle = "teal";
+                ctx.rect(500,50,200,10);
+	    		ctx.rect(500,60,10,300);
+                ctx.rect(510,180,150,10);
+                ctx.stroke();
+            }
+            function mySmile()
+            {
+                ctx.beginPath();
+                ctx.lineWidth = 10;	
+		    	ctx.strokeStyle = "red";
+                ctx.arc(75, 75, 50, 0, Math.PI * 2);
+                ctx.moveTo(110, 75);
+                ctx.arc(75, 75, 35, 0, Math.PI, false);  // Mouth (clockwise)
+                ctx.moveTo(65, 65);
+                ctx.arc(60, 65, 5, 0, Math.PI * 2, true);  // Left eye
+                ctx.moveTo(95, 65);
+                ctx.arc(90, 65, 5, 0, Math.PI * 2, true);  // Right eye
+                ctx.stroke();
+            }
+            function myHouse()
+            {
+                ctx.beginPath();
+                ctx.lineWidth = 20;	
+		    	ctx.strokeStyle = "black";
+                ctx.rect(900,450,100,140);
+                ctx.moveTo(1000, 10);
+                ctx.lineTo(2001, 1200);
+                ctx.moveTo(1000, 10);
+                ctx.lineTo(201, 1200);
+                ctx.arc(300, 100, 100, 40, Math.PI * 2);
+                ctx.moveTo(110, 75);
+                ctx.stroke();
+            }
+            myLetter();
+            mySmile();            
+            myHouse();
             
-            ctx.stroke();
-              
+            ctx.font = "30px Arial";
+	        ctx.fillStyle = "red";
+	        ctx.fillText("665747619", 1000, 30);	
         </script>
     </body>
 </html>
