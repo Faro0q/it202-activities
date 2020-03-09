@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+  </head>
+  <body>
+
+    <canvas></canvas>
+
+
+    <script>
+      let colors = ["red","green","blue","black","orange","purple", "yellow"];
+      let radii = [5,10];
+      
+      let c = document.querySelector("canvas");
+      c.width=500;
+      c.height=500;
+      let ctx = c.getContext("2d");
+
+
+
+      const drawFilledCircle = (x,y,color,radius) => {
+        ctx.beginPath();
+        ctx.arc(x,y,radius,0, Math.PI*2);
+        ctx.fillStyle = color;
+        ctx.closePath();
+        ctx.fill();
+
+      }
+
+
+      const draw = () => {
+
+        let color = colors[Math.floor(Math.random()*colors.length)];
+        let x = Math.floor(Math.random()*c.width);
+        let y = Math.floor(Math.random()*c.height);
+        let radius = radii[Math.floor(Math.random()*radii.length)];
+        drawFilledCircle(x, y, color, radius);
+
+       // window.requestAnimationFrame(draw);
+      }
+
+      draw()
+
+
+
+
+
+
+      </script>
+
+  </body>
+</html>
