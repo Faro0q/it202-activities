@@ -11,6 +11,11 @@
   </head>
   <body>
 
+<button class="mdc-button mdc-button--raised">
+  <div class="mdc-button__ripple"></div>
+  <span class="mdc-button__label">Open Dialog</span>
+</button>
+
     <div class="mdc-dialog">
   <div class="mdc-dialog__container">
     <div class="mdc-dialog__surface"
@@ -43,6 +48,16 @@
 <script>
 
   const dialog = new mdc.dialog.MDCDialog(document.querySelector('.mdc-dialog'));
+
+
+  dialog.listen('MDCDialog:closing', (e) => {
+    console.log("user activated the '", e.detail.action, "' option");
+  });
+
+
+  document.querySelector(".mdc-button").addEventListener("click", (e) => {
+    dialog.open();
+  });
   </script>
 
   </body>
